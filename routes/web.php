@@ -1,5 +1,10 @@
 <?php
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -21,6 +26,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('admin/routes', [HomeController::class,'admin'])->middleware('admin');
+
+Route::resource('book', BookController::class);
+
+Route::resource('book', BookController::class)
+    ->missing(function (Request $request) {
+    return Redirect::route('home');
+});
