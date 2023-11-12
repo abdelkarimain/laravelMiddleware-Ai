@@ -1,4 +1,3 @@
-<x-layout>
 <div class="section-top-border">
 <h3 class="mb-30">Liste des livres</h3>
 <div class="progress-table-wrap">
@@ -33,4 +32,3 @@ class="genric-btn danger circle arrow">
 </div>
 </div>
 </div>
-</x-layout>

@@ -24,15 +24,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('admin/routes', [HomeController::class,'admin'])->middleware('admin');
 
 Route::resource('book', BookController::class);
 
-Route::resource('book', BookController::class)
-    ->missing(function (Request $request) {
-    return Redirect::route('home');
-});
