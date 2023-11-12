@@ -26,7 +26,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        {{ __('You are logged in succesfully!') }}
+                        {{ __('You are logged in succesfully bbbbbb!') }}
                     </div>
                     <div class="card-body">
                         <a href="{{url('admin/routes')}}">Admin</a>
